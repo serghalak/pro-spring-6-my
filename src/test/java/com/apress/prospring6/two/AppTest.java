@@ -1,4 +1,4 @@
-package guru.springframework;
+package com.apress.prospring6.two;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
