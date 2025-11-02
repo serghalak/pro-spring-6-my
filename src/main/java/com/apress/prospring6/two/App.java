@@ -1,7 +1,9 @@
 package com.apress.prospring6.two;
 
+import com.apress.prospring6.two.annotated.HelloWorldConfiguration;
 import com.apress.prospring6.two.decoupled.*;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -24,9 +26,11 @@ public class App
 //                .orElseThrow(() -> new IllegalArgumentException("Service of type 'MessageProvider' was not found"));
 //        mr.setMessageProvider(mp);
 //        mr.render();
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("app-context.xml");
-        MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
-        mr.render();
-
+//        ApplicationContext ctx = new ClassPathXmlApplicationContext("app-context.xml");
+//        MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
+//        mr.render();
+       ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+         MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
+         mr.render();
     }
 }
