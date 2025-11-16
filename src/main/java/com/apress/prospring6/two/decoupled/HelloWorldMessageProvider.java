@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
-//@Component("provider")
+@Component("provider")
 public class HelloWorldMessageProvider implements MessageProvider {
 
     private String message;

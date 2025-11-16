@@ -2,8 +2,10 @@ package com.apress.prospring6.two;
 
 import com.apress.prospring6.two.decoupled.MessageRenderer;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.ImportResource;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -11,6 +13,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 @Configuration
 @ComponentScan
+@ImportResource("classpath:application-context.xml")
 public class App {
     public static void main(String[] args) {
         System.out.println("Hello World!");
@@ -30,8 +33,8 @@ public class App {
 //        mr.render();
         //ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
 
-        //ApplicationContext ctx = new AnnotationConfigApplicationContext(App.class);
-        ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
+        ApplicationContext ctx = new AnnotationConfigApplicationContext(App.class);
+        //ApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
 
         MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
         mr.render();
