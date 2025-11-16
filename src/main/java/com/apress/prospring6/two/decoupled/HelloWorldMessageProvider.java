@@ -9,8 +9,8 @@ public class HelloWorldMessageProvider implements MessageProvider {
 
     private String message;
 
-    //@Autowired
-    public HelloWorldMessageProvider(/*@Value("Configurable message")*/ String message) {
+    @Autowired
+    public HelloWorldMessageProvider(@Value("Configurable message") String message) {
         this.message = message;
     }
 
