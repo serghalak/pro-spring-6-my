@@ -28,6 +28,20 @@
 <!--      <version>2.0.17</version>-->
 <!--    </dependency>-->
 
+    <!-- Add this if you use Spring Boot (includes Logback) -->
+<!--    <dependency>-->
+<!--      <groupId>org.springframework.boot</groupId>-->
+<!--      <artifactId>spring-boot-starter</artifactId>-->
+<!--    </dependency>-->
+
+<!--    &lt;!&ndash; Or add Logback explicitly &ndash;&gt;-->
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.4.11</version>
+    </dependency>
+
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
