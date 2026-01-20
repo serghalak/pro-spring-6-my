@@ -47,7 +47,7 @@ public class ProfileDemo {
         var ctx = new AnnotationConfigApplicationContext();
         ConfigurableEnvironment environment = ctx.getEnvironment();
         //ctx.getEnvironment().setActiveProfiles(profile);
-        //ctx.getEnvironment().setDefaultProfiles("kindergarten"); //highschool
+        ctx.getEnvironment().setDefaultProfiles("kindergarten"); //highschool
         // Перевіряємо, чи профіль не є null або порожнім
 //        if (profile != null && !profile.isBlank()) {
 //            ctx.getEnvironment().setActiveProfiles(profile);
