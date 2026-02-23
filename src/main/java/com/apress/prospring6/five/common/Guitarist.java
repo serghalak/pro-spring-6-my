@@ -33,10 +33,15 @@ import org.slf4j.LoggerFactory;
 /**
  * Created by iuliana.cosmina on 14/04/2022
  */
-public class Guitarist implements Singer{
+public class Guitarist /*implements Singer*/ {
     private static Logger LOGGER = LoggerFactory.getLogger(Guitarist.class);
 
-    @Override
+    //@Override
+    public void sing(String arg1, String arg2) {
+        LOGGER.info("Just keep me where the light is");
+        System.out.println("Method sing with args: " + arg1 + " " + arg2);
+    }
+
     public void sing() {
         LOGGER.info("Just keep me where the light is");
     }
@@ -45,7 +50,7 @@ public class Guitarist implements Singer{
         LOGGER.info("And wrap me in your arms");
     }
 
-    @Override
+    //@Override
     public void rest() {
         LOGGER.info("zzz...");
     }
