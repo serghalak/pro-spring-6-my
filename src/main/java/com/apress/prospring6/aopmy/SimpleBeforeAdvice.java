@@ -16,14 +16,16 @@ public class SimpleBeforeAdvice implements MethodBeforeAdvice {
         proxyFactory.addAdvice(new SimpleBeforeAdvice());
         Guitarist proxy = (Guitarist) proxyFactory.getProxy();
         proxy.sing("New arg1", "New arg2");
+        proxy.sing();
+        proxy.sing2();
     }
 
     @Override
     public void before(Method method, Object[] args, Object target) throws Throwable {
         System.out.println("Before method: '" + method.getName() + "', tune guitar.");
-        System.out.println("Change args");
-        args[0] = "Changed arg1";
-        args[1] = "Changed arg2";
-        System.out.println("Before method: '" + method.getName() + "', args: " + args[0] + ", " + args[1]);
+        //System.out.println("Change args");
+        //args[0] = "Changed arg1";
+        //args[1] = "Changed arg2";
+        //System.out.println("Before method: '" + method.getName() + "', args: " + args[0] + ", " + args[1]);
     }
 }
